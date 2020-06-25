@@ -40,5 +40,6 @@ function validateUser(_user) {
 }
 
 module.exports = {
+  validateUser,
   userScheme,
 };

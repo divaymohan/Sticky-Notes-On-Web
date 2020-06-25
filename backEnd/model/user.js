@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Joi = require("@hapi/joi");
 
 const userScheme = new mongoose.Schema({
   userName: {
@@ -26,6 +27,17 @@ const userScheme = new mongoose.Schema({
     default: Date.now(),
   },
 });
+function validateUser(_user) {
+  const schema = Joi.object({
+    userName: Joi.string().min(3).max(20).required(),
+    email: Joi.string().min(5).ma(100).required(),
+    password: Joi.string()
+      .pattern(new RegExp("^[a-zA-Z0-9]{3,30}$"))
+      .required(),
+    joinDate: Joi.date(),
+  });
+  return schema.validate(_user);
+}
 
 module.exports = {
   userScheme,

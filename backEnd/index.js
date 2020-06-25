@@ -8,10 +8,6 @@ const helmet = require("helmet");
 
 //middleware from express third party modules
 //express middleware
-app.use(express.json()); //req.body
-app.use(express.urlencoded());
-app.use(express.static("public"));
-
 //third party middleware
 app.use(helmet());
 //how to eneble something in developement environment
@@ -23,7 +19,7 @@ if (app.get("env") === "development") {
 }
 
 require("./startup/databaseStartup")();
-
+require("./startup/routes")(app);
 //listen at port
 const port = process.env.PORT || 3001;
 app.listen(port, () => {

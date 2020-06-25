@@ -7,9 +7,14 @@ const userModel = mongoose.model("User", userScheme);
 //write utilities
 //post request handler
 async function addUser(_user) {
-  const user = await userModel.save(_user);
-  if (!user) return;
-  return user;
+  const user = new userModel({
+    userName: _user.userName,
+    email: _user.email,
+    password: _user.password,
+  });
+  const result = await user.save();
+  if (!result) return;
+  return result;
 }
 //get request handler
 async function getUsers() {

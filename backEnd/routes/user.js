@@ -18,6 +18,7 @@ Router.get("/:id", async (req, res) => {
 //post request
 Router.post("/", async (req, res) => {
   const { error } = validateUser(req.body);
+  console.log(req.body);
   if (error) return res.status(400).send(error.details[0].message);
   const result = await addUser(req.body);
   if (!result) return res.status(200).send("Server Error..!!");

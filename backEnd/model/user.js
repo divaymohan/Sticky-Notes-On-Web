@@ -18,7 +18,7 @@ const userScheme = new mongoose.Schema({
   },
   password: {
     type: String,
-    minlength: 8,
+    minlength: 3,
     maxlength: 1000,
     required: true,
   },
@@ -30,7 +30,7 @@ const userScheme = new mongoose.Schema({
 function validateUser(_user) {
   const schema = Joi.object({
     userName: Joi.string().min(3).max(20).required(),
-    email: Joi.string().min(5).ma(100).required(),
+    email: Joi.string().min(5).max(100).required(),
     password: Joi.string()
       .pattern(new RegExp("^[a-zA-Z0-9]{3,30}$"))
       .required(),

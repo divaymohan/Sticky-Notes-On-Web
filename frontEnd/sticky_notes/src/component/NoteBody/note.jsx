@@ -6,31 +6,34 @@ class Note extends Component {
   render() {
     return (
       <Draggable>
-        <div
-          className="card bg-light"
-          style={{ width: "18rem", cursor: "move" }}
-        >
-          <div className="card-body">
-            <h5 className="card-title">
-              <input
-                className="form-control form-control-lg"
-                type="text"
-              ></input>
-            </h5>
-            <p className="card-text">
-              <div clasName="form-group">
-                <textarea
-                  className="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                >
-                  {"divay"}
-                </textarea>
+        <div className="row">
+          <div className="col s2">
+            <div className="card blue-grey darken-1">
+              <div className="card-content white-text">
+                <div className="card-title">
+                  <div class="input-field">
+                    <input id="input_text" type="text" data-length="10"></input>
+                  </div>
+                </div>
+
+                <p>
+                  <div className="row">
+                    <div className="input-field">
+                      <textarea
+                        id="textarea2"
+                        className="materialize-textarea"
+                        data-length="400"
+                      ></textarea>
+                    </div>
+                  </div>
+                </p>
               </div>
-            </p>
-            <a href="#" className="btn btn-primary">
-              Save
-            </a>
+              <div className="card-action">
+                <button class="btn-floating btn-large waves-effect waves-light red pulse">
+                  <i class="material-icons">add</i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </Draggable>

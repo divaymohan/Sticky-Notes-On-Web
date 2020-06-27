@@ -6,10 +6,10 @@ class MyApp extends Component {
   state = {};
   render() {
     return (
-      <React.Fragment>
+      <div>
         <Note />
         <NoteComponent />
-      </React.Fragment>
+      </div>
     );
   }
 }

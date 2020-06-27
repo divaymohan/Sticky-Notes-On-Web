@@ -7,7 +7,7 @@ class Note extends Component {
     return (
       <Draggable>
         <div className="row">
-          <div className="col s2">
+          <div className="col s4">
             <div className="card blue-grey darken-1">
               <div className="card-content white-text">
                 <div className="card-title">

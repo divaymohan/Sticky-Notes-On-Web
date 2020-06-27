@@ -1,7 +1,17 @@
 import React, { Component } from "react";
 
 class Note extends Component {
-  state = {};
+  state = {
+    style: {
+      position: "absolute",
+      zindex: 9,
+    },
+    changableStyle: {
+      padding: "10px",
+      cursor: "move",
+      zindex: 10,
+    },
+  };
   render() {
     return (
       <div className="card" style={{ width: "18rem" }}>
